@@ -25,9 +25,9 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  	"Booster was developed during Naver Connect Foundation's the BoostCamp 3rd iOS process."
-	"Booster is an HTTP networking librart written in Swift."
-	"Booster was created using only the Apple frameworks."
+     "Booster was developed during Naver Connect Foundation's the BoostCamp 3rd iOS process."
+     "Booster is an Simple HTTP Networking Library written in Swift."
+     "Booster was created using only the Apple frameworks."
                    DESC
 
   s.homepage     = "https://github.com/godpp/Booster"
@@ -68,7 +68,6 @@ Pod::Spec.new do |s|
 
   # s.platform     = :ios
   s.platform     = :ios, "10.0"
-
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
   # s.osx.deployment_target = "10.7"
