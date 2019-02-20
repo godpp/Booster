@@ -4,7 +4,7 @@ Author : [godpp](https://github.com/godpp)
 
 ## Intro
 
-* Booster was developed during Naver Connect Foundation's the BoostCamp 3rd iOS process.
+* Booster was developed during NAVER Connect Foundation's the BoostCamp 3rd iOS Process.
 * Booster is an Simple HTTP Networking Library written in Swift.
 * Booster was created using only the Apple Frameworks.
 
