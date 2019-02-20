@@ -100,11 +100,11 @@ final class BoosterManager {
 Finally, you can access an API like this:
 ```swift
 BoosterManager.fetchLiquidOxygen(class: class, quantity: quantity) { result in
-  switch result {
-  case .success(let resultData):
-    // do something with response data
-  case .failure(let error):
-    print(error.localizedDescription)
-  }
+    switch result {
+    case .success(let resultData):
+        // do something with response data
+    case .failure(let error):
+        print(error.localizedDescription)
+    }
 }
 ```
