@@ -21,7 +21,7 @@ pod 'Booster'
 First, you should define an API Endpoint of type enum.
 ```swift
 enum BoosterAPI {
-    case fetchLiquidOxygen(class: String, quantity: Int)
+    case fetchLiquidOxygen(type: String, quantity: Int)
 }
 ```
 
@@ -52,8 +52,8 @@ extension BoosterAPI: BoosterService {
     
     var parameters: Parameters {
         switch self {
-        case .fetchLiquidOxygen(let class, let quantity):
-            return ["class": class, "quantity": quantity]
+        case .fetchLiquidOxygen(let type, let quantity):
+            return ["type": type, "quantity": quantity]
         }
     }
     
@@ -74,12 +74,12 @@ Third, you should implement BoosterManager(has Router) and define static method.
 ```swift
 final class BoosterManager {
     static func fetchLiquidOxygen(
-        class: String,
+        type: String,
         quantity: Int,
         completion: @escaping (Result<BoosterModel>
     ) -> Void ) {
         BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
-            class: class,
+            type: type,
             quantity: quantity
         )) { (data, error) in
             guard error == nil else {
@@ -99,7 +99,7 @@ final class BoosterManager {
 
 Finally, you can access an API like this:
 ```swift
-BoosterManager.fetchLiquidOxygen(class: class, quantity: quantity) { result in
+BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
     switch result {
     case .success(let resultData):
         // do something with response data
