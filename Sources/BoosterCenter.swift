@@ -11,6 +11,9 @@ import Foundation
 public typealias HTTPHeader = [HTTPHeaderField: String]
 
 public class BoosterCenter<Service: BoosterService> {
+    
+    public init() {}
+    
     public func request(
         _ service: Service,
         completion: @escaping (
