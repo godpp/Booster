@@ -79,20 +79,20 @@ final class BoosterManager {
         completion: @escaping (Result<BoosterModel>
     ) -> Void ) {
         BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
-                class: class,
-                quantity: quantity
-                )) { (data, error) in
-                    guard error == nil else {
-                        return completion(Result.failure(error!))
-                    }
-                    guard let responseData = data else { return }
-                    do {
-                        let resultData = try JSONDecoder().decode(BoosterModel.self, from: responseData)
-                        completion(Result.success(resultData))
-                    } catch {
-                        completion(Result.failure(BoosterError.decodingFail))
-                    }
-                }
+            class: class,
+            quantity: quantity
+        )) { (data, error) in
+            guard error == nil else {
+                return completion(Result.failure(error!))
+            }
+            guard let responseData = data else { return }
+            do {
+                let resultData = try JSONDecoder().decode(BoosterModel.self, from: responseData)
+                completion(Result.success(resultData))
+            } catch {
+                completion(Result.failure(BoosterError.decodingFail))
+            }
+        }
     }
 }
 ```
