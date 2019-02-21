@@ -16,6 +16,7 @@ public class BoosterCenter<Service: BoosterService> {
     
     public init() {}
     
+    @discardableResult
     public func request(_ service: Service, completion: @escaping DataCompletion) -> URLSessionDataTask {
         var dataTask = URLSessionDataTask()
         do {
