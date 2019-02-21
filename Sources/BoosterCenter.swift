@@ -8,21 +8,19 @@
 
 import Foundation
 
-public typealias HTTPHeader = [HTTPHeaderField: String]
+public typealias DataCompletion = (_ data: Data?, _ error: BoosterError?) -> Void
+
+public typealias JSONCompletion = (_ rawJSON: String?, _ error: BoosterError?) -> Void
 
 public class BoosterCenter<Service: BoosterService> {
     
     public init() {}
     
-    public func request(
-        _ service: Service,
-        completion: @escaping (
-        _ data: Data?,
-        _ error: BoosterError?
-        ) -> Void) {
+    public func request(_ service: Service, completion: @escaping DataCompletion) -> URLSessionDataTask {
+        var dataTask = URLSessionDataTask()
         do {
             let urlRequest = try makeURLRequest(from: service)
-            let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, _) in
+            dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, _) in
                 guard let data = data else {
                     return completion(nil, BoosterError.noData)
                 }
@@ -41,19 +39,15 @@ public class BoosterCenter<Service: BoosterService> {
                     completion(data, BoosterError.serverError(statusCode: statusCode))
                 }
             }
-            task.resume()
+            dataTask.resume()
         } catch {
             completion(nil, BoosterError.makeURLRequestFail)
         }
+        return dataTask
     }
     
     /// requestDownload is download task to json file.
-    public func requestDownload(
-        _ service: Service,
-        completion: @escaping (
-        _ rawJSON: String?,
-        _ error: BoosterError?
-        ) -> Void) {
+    public func requestDownload(_ service: Service, completion: @escaping JSONCompletion) {
         do {
             let urlRequest = try makeURLRequest(from: service)
             let task = URLSession.shared.downloadTask(with: urlRequest) { (localURL, response, _) in

@@ -10,6 +10,8 @@ import Foundation
 
 //MARK: - Base Protocol Service
 
+public typealias HTTPHeader = [HTTPHeaderField: String]
+
 /// This Protocol is basic implementation for EndPoint
 public protocol BoosterService {
     var baseURL: URL { get }
