@@ -73,12 +73,8 @@ extension BoosterAPI: BoosterService {
 Third, you should implement BoosterManager(has Router) and define static method.
 ```swift
 final class BoosterManager {
-    static func fetchLiquidOxygen(
-        type: String,
-        quantity: Int,
-        completion: @escaping (Result<BoosterModel>) -> Void
-    ) -> URLSessionDataTask {
-        return BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
+    static func fetchLiquidOxygen(type: String, quantity: Int, completion: @escaping (Result<BoosterModel>) -> Void) {
+        BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
             type: type,
             quantity: quantity
         )) { (data, error) in
@@ -99,7 +95,7 @@ final class BoosterManager {
 
 Finally, you can access an API like this:
 ```swift
-let dataTask = BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
+BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
     switch result {
     case .success(let resultData):
         // do something with response data
