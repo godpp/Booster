@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Booster"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Booster is an HTTP networking librart written in Swift."
 
   # This description is used to generate tags and improve search results.
