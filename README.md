@@ -76,9 +76,9 @@ final class BoosterManager {
     static func fetchLiquidOxygen(
         type: String,
         quantity: Int,
-        completion: @escaping (Result<BoosterModel>
-    ) -> Void ) {
-        BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
+        completion: @escaping (Result<BoosterModel>) -> Void
+    ) -> URLSessionDataTask {
+        return BoosterCenter<BoosterAPI>().request(.fetchLiquidOxygen(
             type: type,
             quantity: quantity
         )) { (data, error) in
@@ -99,7 +99,7 @@ final class BoosterManager {
 
 Finally, you can access an API like this:
 ```swift
-BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
+let dataTask = BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
     switch result {
     case .success(let resultData):
         // do something with response data
