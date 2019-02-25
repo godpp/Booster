@@ -10,7 +10,7 @@ Author : [godpp](https://github.com/godpp)
 
 ## UML
 
-![](./image/BoosterUML.png)
+![](./image/BoosterUML_Sample.png)
 
 ## Installation
 
