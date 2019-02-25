@@ -8,6 +8,10 @@ Author : [godpp](https://github.com/godpp)
 * Booster is an Simple HTTP Networking Library written in Swift.
 * Booster was created using only the Apple Frameworks.
 
+## UML
+
+![](./image/BoosterUML.png)
+
 ## Installation
 
 ### Cocoapods
