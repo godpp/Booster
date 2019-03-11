@@ -12,6 +12,8 @@
 - [x] URL Query / Parameters Encoding
 - [x] Set HTTP Header Field
 - [x] throw CustomError
+- [ ] Provide Examples
+- [ ] Unit Test
 - [ ] Multipart/Form-Data
 - [ ] Refactoring
 
