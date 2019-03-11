@@ -1,18 +1,33 @@
 # 🚀 Booster
 
-Author : [godpp](https://github.com/godpp)
-
-## Intro
+## OverView
 
 * Booster was developed during NAVER Connect Foundation's the BoostCamp 3rd iOS Process.
 * Booster is an Simple HTTP Networking Library written in Swift.
 * Booster was created using only the Apple Frameworks.
 
+## Features
+
+- [x] Basic REST API Call (GET, POST, PUT, DELETE)
+- [x] URL Query / Parameters Encoding
+- [x] Set HTTP Header Field
+- [x] throw CustomError
+- [ ] Multipart/Form-Data
+- [ ] Refactoring
+
 ## UML
 
 ![](./image/BoosterUML_Sample.png)
 
+## Requirements
+
+* Swift 4.2
+* Xcode 10.0+
+* iOS 12.0+
+
 ## Installation
+
+Booster officially supports CocoaPods only.
 
 ### Cocoapods
 
@@ -108,3 +123,11 @@ BoosterManager.fetchLiquidOxygen(type: type, quantity: quantity) { result in
     }
 }
 ```
+
+## Author
+
+* [godpp](https://github.com/godpp)
+
+## License
+
+Booster is released under an MIT license. See [LICENSE.md](https://github.com/godpp/Booster/blob/master/LICENSE) for more information.
