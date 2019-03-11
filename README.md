@@ -1,6 +1,6 @@
 # 🚀 Booster
 
-## OverView
+## Overview
 
 * Booster was developed during NAVER Connect Foundation's the BoostCamp 3rd iOS Process.
 * Booster is an Simple HTTP Networking Library written in Swift.
